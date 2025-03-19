@@ -20,13 +20,13 @@ export default function RootLayout({children}) {
     return (
         <html lang="en" className="bg-[#121429]">
         <body className="bg-[#121429]">
-            <header className="flex justify-between bg-[#121429] text-white">
-                <div><p>LOGO</p></div>
-                <nav className="space-x-5">
-                    <a href="#about">ABOUT</a>
-                    <a href="#project">PROJEKTE</a>
-                    <a href="#process">PROZESS</a>
-                    <a className="mr-5" href="#contact">KONTAKT</a>
+            <header className="flex justify-between bg-[#121429] text-white border-b-2 border-b-white border-b-solid">
+                <div><p className="py-3">LOGO</p></div>
+                <nav className="py-3">
+                    <a className="px-2 py-auto border-l-2 boder-l-white border-l-solid" href="#about">ABOUT</a>
+                    <a className="px-2 border-l-2 boder-l-white border-l-solid" href="#project">PROJEKTE</a>
+                    <a className="px-2 border-l-2 boder-l-white border-l-solid" href="#process">PROZESS</a>
+                    <a className="px-2 mr-5 border-l-2 boder-l-white border-l-solid" href="#contact">KONTAKT</a>
                 </nav>
             </header>
             <main className="bg-[#121429] text-white">
