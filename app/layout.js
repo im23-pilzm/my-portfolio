@@ -1,8 +1,10 @@
-import {Geist, Geist_Mono} from "next/font/google";
+import {Outfit, Geist_Mono} from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const outfit = Outfit({
+    variable: "--font-outfit",
     subsets: ["latin"],
 });
 
@@ -18,20 +20,13 @@ export const metadata = {
 
 export default function RootLayout({children}) {
     return (
-        <html lang="en" className="bg-[#121429]">
-        <body className="bg-[#121429]">
-            <header className="flex justify-between bg-[#121429] text-white border-b-2 border-b-white border-b-solid">
-                <div><p className="py-3">LOGO</p></div>
-                <nav className="py-3">
-                    <a className="px-2 py-auto border-l-2 boder-l-white border-l-solid" href="#about">ABOUT</a>
-                    <a className="px-2 border-l-2 boder-l-white border-l-solid" href="#project">PROJEKTE</a>
-                    <a className="px-2 border-l-2 boder-l-white border-l-solid" href="#process">PROZESS</a>
-                    <a className="px-2 mr-5 border-l-2 boder-l-white border-l-solid" href="#contact">KONTAKT</a>
-                </nav>
-            </header>
-            <main className="bg-[#121429] text-white">
-                {children}
-            </main>
+        <html lang="en" className={`bg-[#121429] ${outfit.variable} ${geistMono.variable}`}>
+        <body className={`bg-[#121429] ${outfit.variable} ${geistMono.variable}`}>
+        <Header></Header>
+        <main className="bg-[#121429] text-white">
+            {children}
+        </main>
+        <Footer></Footer>
         </body>
         </html>
     );
