@@ -1,6 +1,13 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 @theme {
   --font-sans: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
+}
+.text-6xl {
+  white-space: pre-line;
 }
