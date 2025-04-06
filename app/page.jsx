@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import FadeDownVolleyball from "@/components/FadeDownVolleyball";
+import FadeDownCooking from "@/components/FadeDownCooking"
 import profilePic from "/public/IMG_0360.JPG"
 import pythonIcon from "/public/python-original.svg"
 import htmlIcon from "/public/html5-original-wordmark.svg"
@@ -64,19 +65,24 @@ export default function main_page() {
                     </div>
 
                     <div className="w-1/2">
-                        <p className="mt-[13rem] w-[30rem]">Zu einer meiner grössten Leidenschaften gehört Volleyball. Ich spiele nun seit 2. Jahren im
+                        <p className="mt-[13rem] w-[30rem] mx-auto">Zu einer meiner grössten Leidenschaften gehört Volleyball. Ich spiele nun seit 2. Jahren im
                             Volleyball Club Volley Oerlikon. Mir gefällt am Volleyball das Teamwork und Kommunikation
-                            aber auch dass man schnelle entscheidungen treffen muss.</p>
+                            aber auch dass man schnell die beste Entscheidung treffen muss.</p>
                     </div>
                 </div>
-                <div>
-                    <div>
-
+                <div className="flex">
+                    <div className="w-1/2">
+                        <p className="mt-[13rem] w-[30rem] mx-auto">Ein Hobby dass ich noch nicht so lange mache, ist kochen. Am kochen fasziniert mich vor allem wie unterschiedlich verschiedene
+                        Nationalitäten kochen, wobei ich italienisch am besten finde, und man diese zubereitet. Ich koche meistens italienisch oder asiatisch.</p>
                     </div>
-                    <div>
-
+                    <div className="w-1/2">
+                        <FadeDownCooking></FadeDownCooking>
                     </div>
                 </div>
+            </section>
+
+            <section>
+
             </section>
         </div>
     );

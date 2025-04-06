@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion"
-import Volleyball from "/public/Volleyball_Ball.png"
+import Cooking from "/public/Header-Bewusst-Zeitsparend-Kochen-001.jpg"
 
-export default function fadeDownVolleyball() {
+export default function fadeDownCooking() {
     return (
-        <div className="ml-50 mt-30">
+        <div className="mr-50 mt-30">
             <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -14,11 +14,11 @@ export default function fadeDownVolleyball() {
                 viewport={{ once: true, amount: 0.3 }}
             >
                 <Image
-                    src={ Volleyball }
+                    src={ Cooking }
                     alt="Portfolio"
                     width={300}
                     height={300}
-                    className="mx-auto"
+                    className="rounded-full border-white border-solid border-[1px] object-cover mx-auto"
                 />
             </motion.div>
         </div>
