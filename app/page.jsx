@@ -13,6 +13,7 @@ import nodeIcon from "/public/nodejs-original-wordmark.svg"
 import mySqlIcon from "/public/mysql-original-wordmark.svg"
 import mongoDbIcon from "/public/mongodb-original-wordmark.svg"
 import {TypeAnimation} from "react-type-animation";
+import ProjectsMainPageLayout from "@/components/projects_mainPage_layout";
 
 
 export default function main_page() {
@@ -55,7 +56,7 @@ export default function main_page() {
                 </div>
             </section>
 
-            <section>
+            <section id="my_interests">
                 <div>
                     <p className="ml-50 text-[3rem]">Meine Interessen</p>
                 </div>
@@ -81,8 +82,8 @@ export default function main_page() {
                 </div>
             </section>
 
-            <section>
-
+            <section id="my_projects">
+                <ProjectsMainPageLayout></ProjectsMainPageLayout>
             </section>
         </div>
     );

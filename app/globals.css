@@ -11,3 +11,7 @@
 .text-6xl {
   white-space: pre-line;
 }
+
+.filter-arrow {
+  filter: invert(100%);
+}
