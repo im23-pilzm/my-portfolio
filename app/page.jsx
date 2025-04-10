@@ -35,7 +35,7 @@ export default function main_page() {
 
 
                     <div className="mt-20">
-                        <div className="ml-50 animate-fade-down delay-1000">
+                        <div className="ml-50 animate-fade-in-scale">
                             <p className="text-2xl"><b>Über mich</b></p>
                             <p className="mt-5">Ich bin Maximilian Pilz, 17 Jahre alt, und besuche seit
                                 zwei Jahren die Informatikmittelschule (IMS). Programmieren fasziniert mich, weil es
@@ -82,7 +82,7 @@ export default function main_page() {
                 </div>
             </section>
 
-            <section id="my_projects">
+            <section id="my_projects" className="mt-[13rem]">
                 <ProjectsMainPageLayout></ProjectsMainPageLayout>
             </section>
         </div>

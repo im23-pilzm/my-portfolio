@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "MemoNotes",
+      "picture": "placeHolderPicture",
+      "about": "kfasjdifjas",
+      "problem": "asdojfiasjd",
+      "solution": "asodfnoasin"
+    },
+    {
+      "id": "2",
+      "title": "HousePricePredictor",
+      "picture": "placeHolderPicture",
+      "about": "kfasjdifjas",
+      "problem": "asdojfiasjd",
+      "solution": "asodfnoasin"
+    },
+    {
+      "id": "3",
+      "title": "OnlineShop",
+      "picture": "placeHolderPicture",
+      "about": "kfasjdifjas",
+      "problem": "asdojfiasjd",
+      "solution": "asodfnoasin"
+    }
+  ]
+}

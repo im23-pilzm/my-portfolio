@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "framer-motion": "^12.6.2",
-    "next": "15.2.0",
+    "fs": "^0.0.1-security",
+    "next": "^15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-type-animation": "^3.2.0"
+    "react-type-animation": "^3.2.0",
+    "swiper": "^11.2.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
