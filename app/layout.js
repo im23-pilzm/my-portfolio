@@ -20,8 +20,8 @@ export const metadata = {
 
 export default function RootLayout({children}) {
     return (
-        <html lang="en" className={`bg-[#121429] ${outfit.variable} ${geistMono.variable}`}>
-        <body className={`bg-[#121429] ${outfit.variable} ${geistMono.variable}`}>
+        <html lang="en" className={`bg-[#121429] ${outfit.variable} ${geistMono.variable} scroll-smooth`}>
+        <body className={`bg-[#121429] ${outfit.variable} ${geistMono.variable} `}>
         <Header></Header>
         <main className="bg-[#121429] text-white">
             {children}

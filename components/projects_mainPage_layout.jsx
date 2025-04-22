@@ -1,33 +1,49 @@
 import Image from "next/image";
 import arrowRight from "/public/arrow-right.png"
 import arrowLeft from "/public/arrow-left.png"
-import picturePlaceholder from "/public/Rectangle-1920x1080-Placeholder.png"
 import memoNotes from "/public/Screenshot 2025-04-10 143034.png"
 import housePricePredictor from "/public/Screenshot 2025-04-10 142916.png"
 import data from '@/data/projects.json'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation, Pagination, Mousewheel, Keyboard} from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
+import "/app/globals.css"
+
 console.log(data.projects[0].title)
 
 
 export default function ProjectsMainPageLayout() {
-    return(
-        <div>
-            <Swiper>
+    return (<div>
+            <Swiper
                 cssMode={true}
                 navigation={true}
                 pagination={true}
                 mousewheel={true}
                 keyboard={true}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                className="projectSlider"
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    <h2 className="text-[40px] mb-15 text-center">MemoNotes</h2>
+                    <Image
+                        src={memoNotes}
+                        alt="memoNotes Picture"
+                        width={1296}
+                        height={2304}
+                        className="rounded-[8px] mx-auto border-white border-solid border-[1px]"
+                    /></SwiperSlide>
+                <SwiperSlide>
+                    <h2 className="text-[40px] mb-15 text-center">HousePricePredictor</h2>
+                    <Image
+                        src={housePricePredictor}
+                        alt="housePricePredictor Picture"
+                        width={1296}
+                        height={2304}
+                        className="rounded-[8px] mx-auto border-white border-solid border-[1px]"
+                    /></SwiperSlide>
             </Swiper>
-            <SwiperSlide><Image src={memoNotes} alt="memoNotes picture"/></SwiperSlide>
-            <SwiperSlide><Image src={housePricePredictor} alt="housePricePredictor picture"/></SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
         </div>
     )
 
@@ -88,5 +104,6 @@ export default function ProjectsMainPageLayout() {
             </div>
 
         </div>
-    )*/}
+    )*/
+    }
 }

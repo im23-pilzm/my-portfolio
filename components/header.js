@@ -5,16 +5,16 @@ export default function Header() {
             <nav>
                 <ul className="flex m-0 p-0">
                     <li>
-                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block" href="#about">ABOUT</a>
+                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block hover:bg-blue-300 transition duration-300" href="#my_interests">ABOUT</a>
                     </li>
                     <li>
-                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block" href="#project">PROJEKTE</a>
+                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block hover:bg-blue-300 transition duration-300" href="#my_projects">PROJEKTE</a>
                     </li>
                     <li>
-                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block" href="#process">PROZESS</a>
+                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block hover:bg-blue-300 transition duration-300" href="#process">PROZESS</a>
                     </li>
                     <li>
-                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block" href="#contact">KONTAKT</a>
+                        <a className="px-5 py-3 border-l-1 boder-l-white border-l-solid block hover:bg-blue-300 transition duration-300" href="#contact">KONTAKT</a>
                     </li>
                 </ul>
             </nav>
