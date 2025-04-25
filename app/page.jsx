@@ -1,7 +1,6 @@
 "use client"
 import {motion} from "framer-motion";
 import React from "react";
-import {AuroraBackground} from "@/components/ui/aurora-background";
 import Image from "next/image";
 import FadeDownVolleyball from "@/components/FadeDownVolleyball";
 import FadeDownCooking from "@/components/FadeDownCooking"
@@ -14,88 +13,234 @@ import reactIcon from "/public/react-original-wordmark.svg"
 import nodeIcon from "/public/nodejs-original-wordmark.svg"
 import mySqlIcon from "/public/mysql-original-wordmark.svg"
 import mongoDbIcon from "/public/mongodb-original-wordmark.svg"
+import volleyballImage from "/public/Volleyball_Ball.png"
+import cookingImage from "/public/Header-Bewusst-Zeitsparend-Kochen-001.jpg"
 import {TypeAnimation} from "react-type-animation";
 import ProjectsMainPageLayout from "@/components/projects_mainPage_layout";
 
 
 export default function main_page() {
-    return (<div>
-            <AuroraBackground>
-                <motion.div
-                    initial={{opacity: 0.0, y: 40}}
-                    whileInView={{opacity: 1, y: 0}}
-                    transition={{
-                        delay: 0.3,
-                        duration: 0.8,
-                        ease: "easeInOut",
-                    }}
-                    className="relative flex flex-col gap-4 items-center justify-center px-4"
-                >
-                    <section id="about_section" className="flex">
-                        <div className="w-1/2">
+    return (
+        <div className="min-h-screen bg-[#121429]">
+            {/* Hero Section */}
+            <section className="min-h-screen flex items-center justify-center">
+                <div className="container mx-auto px-4">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="space-y-8"
+                        >
                             <div>
-                                <div className="justify ml-50 mt-60 text-6xl">
-                                    <TypeAnimation
-                                        sequence={["Ich heisse\nMaximillian Pilz", 800,]}
-                                        repeat={0}
-                                    />
-                                </div>
+                                <TypeAnimation
+                                    sequence={["Ich heisse\nMaximillian Pilz", 800,]}
+                                    repeat={0}
+                                    className="text-5xl md:text-6xl font-bold text-white"
+                                />
                             </div>
-
-
-                            <div className="mt-20">
-                                <div className="ml-50 animate-fade-in-scale">
-                                    <p className="text-2xl"><b>Über mich</b></p>
-                                    <p className="mt-5">Ich bin Maximilian Pilz, 17 Jahre alt, und besuche seit
-                                        zwei Jahren die Informatikmittelschule (IMS). Programmieren fasziniert mich,
-                                        weil es
-                                        vielseitig einsetzbar ist und Kreativität mit logischem Denken verbindet.</p>
-                                </div>
+                            <div className="space-y-4">
+                                <h2 className="text-2xl font-semibold text-white">Über mich</h2>
+                                <p className="text-lg text-white/90 leading-relaxed">
+                                    Ich bin Maximilian Pilz, 17 Jahre alt, und besuche seit
+                                    zwei Jahren die Informatikmittelschule (IMS). Programmieren fasziniert mich,
+                                    weil es vielseitig einsetzbar ist und Kreativität mit logischem Denken verbindet.
+                                </p>
                             </div>
-                        </div>
-                        <div className="w-1/2 mt-50 mb-50">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="flex justify-center"
+                        >
                             <Image
                                 src={profilePic}
                                 width={500}
                                 height={500}
                                 alt="Picture of me"
-                                className="rounded-full mx-auto border-white border-solid border-[1px]"
+                                className="rounded-full border-2 border-white/20 shadow-2xl"
                             />
-                        </div>
-                    </section>
-                </motion.div>
-            </AuroraBackground>
-            <section id="my_interests">
-                <div>
-                    <p className="ml-50 text-[3rem]">Meine Interessen</p>
-                </div>
-                <div className="flex">
-                    <div className="w-1/2">
-                        <FadeDownVolleyball></FadeDownVolleyball>
-                    </div>
-
-                    <div className="w-1/2">
-                        <p className="mt-[13rem] w-[30rem] mx-auto">Zu einer meiner grössten Leidenschaften gehört
-                            Volleyball. Ich spiele nun seit 2. Jahren im
-                            Volleyball Club Volley Oerlikon. Mir gefällt am Volleyball das Teamwork und Kommunikation
-                            aber auch dass man schnell die beste Entscheidung treffen muss.</p>
-                    </div>
-                </div>
-                <div className="flex">
-                    <div className="w-1/2">
-                        <p className="mt-[13rem] w-[30rem] mx-auto">Ein Hobby dass ich noch nicht so lange mache, ist
-                            kochen. Am kochen fasziniert mich vor allem wie unterschiedlich verschiedene
-                            Nationalitäten kochen, wobei ich italienisch am besten finde, und man diese zubereitet. Ich
-                            koche meistens italienisch oder asiatisch.</p>
-                    </div>
-                    <div className="w-1/2">
-                        <FadeDownCooking></FadeDownCooking>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
-            <section id="my_projects" className="mt-[13rem]">
-                <ProjectsMainPageLayout></ProjectsMainPageLayout>
+            {/* Interests Section */}
+            <section id="my_interests" className="py-20">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-bold text-white">
+                            Meine Interessen
+                        </h2>
+                        <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+                    </motion.div>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                        >
+                            <div className="flex flex-col items-center text-center space-y-6">
+                                <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-white/20">
+                                    <Image
+                                        src={volleyballImage}
+                                        alt="Volleyball"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center">
+                                        <FadeDownVolleyball />
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="text-2xl font-semibold text-white">Volleyball</h3>
+                                    <p className="text-lg text-white/90 leading-relaxed">
+                                        Zu einer meiner grössten Leidenschaften gehört Volleyball. Ich spiele nun seit 2. Jahren im
+                                        Volleyball Club Volley Oerlikon. Mir gefällt am Volleyball das Teamwork und Kommunikation
+                                        aber auch dass man schnell die beste Entscheidung treffen muss.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                        >
+                            <div className="flex flex-col items-center text-center space-y-6">
+                                <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-white/20">
+                                    <Image
+                                        src={cookingImage}
+                                        alt="Cooking"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center">
+                                        <FadeDownCooking />
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="text-2xl font-semibold text-white">Kochen</h3>
+                                    <p className="text-lg text-white/90 leading-relaxed">
+                                        Ein Hobby dass ich noch nicht so lange mache, ist kochen. Am kochen fasziniert mich vor allem wie unterschiedlich verschiedene
+                                        Nationalitäten kochen, wobei ich italienisch am besten finde, und man diese zubereitet. Ich
+                                        koche meistens italienisch oder asiatisch.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Projects Section */}
+            <section id="my_projects" className="py-20">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-bold text-white">
+                            Meine Projekte
+                        </h2>
+                        <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+                    </motion.div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                        >
+                            <div className="space-y-6">
+                                <h3 className="text-2xl font-semibold text-white">MemoNotes</h3>
+                                <p className="text-lg text-white/80">
+                                    Eine moderne Notizen-App mit Echtzeit-Synchronisation und Markdown-Unterstützung
+                                </p>
+                                <div className="space-y-4">
+                                    <div className="bg-white/10 p-4 rounded-lg">
+                                        <h4 className="text-sm font-medium text-white mb-2">Features</h4>
+                                        <ul className="text-white/80 space-y-1 text-sm">
+                                            <li>• Echtzeit-Synchronisation</li>
+                                            <li>• Markdown-Unterstützung</li>
+                                            <li>• Cloud-Speicherung</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-white/10 p-4 rounded-lg">
+                                        <h4 className="text-sm font-medium text-white mb-2">Verwendete Technologien</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">HTML</span>
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">CSS</span>
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">JavaScript</span>
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Node.js</span>
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Express.js</span>
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">PostgreSQL</span>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white/10 p-4 rounded-lg">
+                                        <h4 className="text-sm font-medium text-white mb-2">Status</h4>
+                                        <p className="text-white/80 text-sm">In Entwicklung</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                        >
+                            <div className="space-y-6">
+                                <h3 className="text-2xl font-semibold text-white">HousePricePredictor</h3>
+                                <p className="text-lg text-white/80">
+                                    Ein KI-gestütztes Tool zur Vorhersage von Immobilienpreisen
+                                </p>
+                                <div className="space-y-4">
+                                    <div className="bg-white/10 p-4 rounded-lg">
+                                        <h4 className="text-sm font-medium text-white mb-2">Features</h4>
+                                        <ul className="text-white/80 space-y-1 text-sm">
+                                            <li>• KI-gestützte Vorhersagen</li>
+                                            <li>• Standortanalyse</li>
+                                            <li>• Markttrends-Analyse</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-white/10 p-4 rounded-lg">
+                                        <h4 className="text-sm font-medium text-white mb-2">Verwendete Technologien</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Python</span>
+                                            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Pandas</span>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white/10 p-4 rounded-lg">
+                                        <h4 className="text-sm font-medium text-white mb-2">Status</h4>
+                                        <p className="text-white/80 text-sm">In Entwicklung</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
             </section>
         </div>
     );
