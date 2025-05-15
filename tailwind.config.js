@@ -1,7 +1,3 @@
-const {
-    default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
@@ -14,11 +10,17 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                "blue-500": "#3b82f6",
-                "indigo-300": "#a5b4fc",
-                "blue-300": "#93c5fd",
-                "violet-200": "#c4b5fd",
-                "blue-400": "#60a5fa",
+                blue: {
+                    300: "#93c5fd",
+                    400: "#60a5fa",
+                    500: "#3b82f6",
+                },
+                indigo: {
+                    300: "#a5b4fc",
+                },
+                violet: {
+                    200: "#c4b5fd",
+                },
             },
             animation: {
                 "fade-down": "fadeDown 1s ease-out forwards",
@@ -40,18 +42,5 @@ module.exports = {
             },
         },
     },
-    variants: {},
-    plugins: [addVariablesForColors],
+    plugins: [],
 };
-
-// Plugin to expose Tailwind colors as CSS variables
-function addVariablesForColors({ addBase, theme }) {
-    const allColors = flattenColorPalette(theme("colors"));
-    const newVars = Object.fromEntries(
-        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-    );
-
-    addBase({
-        ":root": newVars,
-    });
-}
