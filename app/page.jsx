@@ -7,8 +7,8 @@ import FadeDownCooking from "@/components/FadeDownCooking"
 import profilePic from "/public/IMG_0360.JPG"
 import volleyballImage from "/public/Volleyball_Ball.png"
 import cookingImage from "/public/Header-Bewusst-Zeitsparend-Kochen-001.jpg"
-import HousePricePredictorMockup from "/public/HousePricePredictorMockup.png"
-import MemoNotesMockup from "/public/MemoNotesMockup.png"
+import HousePricePredictorMockup from "/public/HousePricePredictor_Mockup.png"
+import MemoNotesMockup from "/public/MemoNotes_Mockup.png"
 import MemoNotesImage from "/public/Screenshot 2025-04-10 143034.png"
 import {TypeAnimation} from "react-type-animation";
 import { Swiper, SwiperSlide} from "swiper/react";
@@ -24,7 +24,7 @@ export default function main_page() {
     return (
         <div className="min-h-screen bg-[#121429]">
             {/* Hero Section */}
-            <section className="min-h-screen flex items-center justify-center">
+            <section className="min-h-screen flex items-center justify-center" id="hero_section">
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <motion.div
@@ -192,9 +192,9 @@ export default function main_page() {
                                 className="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 w-300 mx-auto flex"
                             >
                                 <Image
-                                    src={HousePricePredictorMockup}
+                                    src={MemoNotesMockup}
                                     alt="House Price Predictor Image"
-                                    className="w-1/2 rounded-2xl border border-white/10"
+                                    className="w-1/2"
                                 />
                                 <div className="space-y-6 w-1/2 ml-5">
                                     <h3 className="text-2xl font-semibold text-white">MemoNotes</h3>
@@ -245,9 +245,9 @@ export default function main_page() {
                                 className="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 w-300 mx-auto flex"
                             >
                                 <Image
-                                    src={MemoNotesMockup}
+                                    src={HousePricePredictorMockup}
                                     alt="MemoNotes Mockup"
-                                    className="w-1/2 rounded-2xl border border-white/10"
+                                    className="w-1/2"
                                 />
                                 <div className="space-y-6 w-1/2 ml-5">
                                     <h3 className="text-2xl font-semibold text-white">HousePricePredictor</h3>
@@ -282,6 +282,42 @@ export default function main_page() {
                             </motion.div>
                         </SwiperSlide>
                     </Swiper>
+                </div>
+            </section>
+            {/* How I Work Section */}
+            <section id="my_process" className="py-20">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-bold text-white">So arbeite ich</h2>
+                        <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-4 gap-8">
+                        {[
+                            { title: "1. Idee", text: "Ich beginne mit einer klaren Problemstellung und recherchiere passende Lösungsansätze. Lorem ipsum dolor sit amet." },
+                            { title: "2. Planung", text: "Ich plane die Projektstruktur, definiere Features und setze Meilensteine. Lorem ipsum dolor sit amet." },
+                            { title: "3. Umsetzung", text: "Ich entwickle Schritt für Schritt das Projekt mit modernen Technologien. Lorem ipsum dolor sit amet." },
+                            { title: "4. Test & Feedback", text: "Am Ende teste ich alles gründlich und hole Feedback ein, um Verbesserungen vorzunehmen. Lorem ipsum dolor sit amet." },
+                        ].map((step, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: i * 0.1 }}
+                                viewport={{ once: true }}
+                                className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 text-center"
+                            >
+                                <div className="text-3xl font-bold text-blue-400 mb-4">{step.title}</div>
+                                <p className="text-white/80 text-base">{step.text}</p>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>
