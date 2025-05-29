@@ -18,7 +18,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/keyboard';
 import 'swiper/css/mousewheel';
-
+import ContactSection from "@/components/ContactSection";
 
 export default function main_page() {
     return (
@@ -230,7 +230,7 @@ export default function main_page() {
                                         </div>
                                         <div className="bg-white/10 p-4 rounded-lg">
                                             <h4 className="text-sm font-medium text-white mb-2">Status</h4>
-                                            <p className="text-white/80 text-sm">In Entwicklung</p>
+                                            <p className="text-white/80 text-sm">Pausiert</p>
                                         </div>
                                     </div>
                                 </div>
@@ -300,10 +300,22 @@ export default function main_page() {
 
                     <div className="grid md:grid-cols-4 gap-8">
                         {[
-                            { title: "1. Idee", text: "Ich beginne mit einer klaren Problemstellung und recherchiere passende Lösungsansätze. Lorem ipsum dolor sit amet." },
-                            { title: "2. Planung", text: "Ich plane die Projektstruktur, definiere Features und setze Meilensteine. Lorem ipsum dolor sit amet." },
-                            { title: "3. Umsetzung", text: "Ich entwickle Schritt für Schritt das Projekt mit modernen Technologien. Lorem ipsum dolor sit amet." },
-                            { title: "4. Test & Feedback", text: "Am Ende teste ich alles gründlich und hole Feedback ein, um Verbesserungen vorzunehmen. Lorem ipsum dolor sit amet." },
+                            {
+                                "title": "1. Idee",
+                                "text": "Ich starte meistens damit, mir zu überlegen, was mir im Alltag helfen könnte, oder recherchiere im Internet nach spannenden Ideen, die ich umsetzen könnte. Ich versuche mir dann Inspiration von anderen Apps oder Webseiten zu holen."
+                            },
+                            {
+                                "title": "2. Planung",
+                                "text": "Im zweiten Schritt überlege ich mir, welche Programmiersprachen und Tools ich verwenden könnte, um dieses Projekt umzusetzen, und erstelle je nach Bedarf ein UI-Design in Figma. Ich setze mir Ziele zum Abarbeiten."
+                            },
+                            {
+                                "title": "3. Umsetzung",
+                                "text": "Im dritten Schritt setze ich dann die Idee um. Ich probiere immer gerne neue Technologien und Programmiersprachen aus, um mein Wissen weiterzuentwickeln. Dabei versuche ich, strukturiert vorzugehen und die verschiedenen Ziele Schritt für Schritt abzuarbeiten. Bei Problemen suche ich zuerst online nach Lösungen oder frage Lehrpersonen um Hilfe, damit ich das Problem lösen kann."
+                            },
+                            {
+                                "title": "4. Test",
+                                "text": "Im letzten Schritt gehe ich nochmals über das Projekt und überprüfe, ob alle Features und Funktionen so funktionieren, wie sie sollen. Wenn nicht, mache ich ein Troubleshooting, um den Fehler zu beheben."
+                            }
                         ].map((step, i) => (
                             <motion.div
                                 key={i}
@@ -320,6 +332,8 @@ export default function main_page() {
                     </div>
                 </div>
             </section>
+            {/* Contact Section */}
+            <ContactSection />
         </div>
     );
 }
