@@ -1,6 +1,6 @@
 "use client"
 import {motion} from "framer-motion";
-import React, { Suspense } from "react";
+import React, {Suspense, useRef} from "react";
 import Image from "next/image";
 import FadeDownVolleyball from "@/components/FadeDownVolleyball";
 import FadeDownCooking from "@/components/FadeDownCooking"
@@ -11,8 +11,8 @@ import HousePricePredictorMockup from "/public/HousePricePredictor_Mockup.png"
 import MemoNotesMockup from "/public/MemoNotes_Mockup.png"
 import MemoNotesImage from "/public/Screenshot 2025-04-10 143034.png"
 import {TypeAnimation} from "react-type-animation";
-import { Swiper, SwiperSlide} from "swiper/react";
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation, Pagination, Mousewheel, Keyboard} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -23,6 +23,8 @@ import SkillsSection from "@/components/SkillsSection";
 
 
 export default function main_page() {
+    const swiperRef = useRef();
+
     return (
         <div className="min-h-screen bg-[#121429]">
             {/* Hero Section */}
@@ -97,7 +99,8 @@ export default function main_page() {
                             className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300"
                         >
                             <div className="flex flex-col items-center text-center space-y-6">
-                                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white/20">
+                                <div
+                                    className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white/20">
                                     <Image
                                         src={volleyballImage}
                                         alt="Volleyball"
@@ -113,7 +116,8 @@ export default function main_page() {
                                     <h3 className="text-xl md:text-2xl font-semibold text-white">Volleyball</h3>
                                     <p className="text-base md:text-lg text-white/90 leading-relaxed">
                                         Zu einer meiner grössten Leidenschaften gehört Volleyball. Ich spiele nun seit
-                                        2. Jahren im Volleyball Club Volley Oerlikon. Mir gefällt am Volleyball das Teamwork und
+                                        2. Jahren im Volleyball Club Volley Oerlikon. Mir gefällt am Volleyball das
+                                        Teamwork und
                                         Kommunikation aber auch dass man schnell die beste Entscheidung treffen muss.
                                     </p>
                                 </div>
@@ -128,7 +132,8 @@ export default function main_page() {
                             className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300"
                         >
                             <div className="flex flex-col items-center text-center space-y-6">
-                                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white/20">
+                                <div
+                                    className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white/20">
                                     <Image
                                         src={cookingImage}
                                         alt="Cooking"
@@ -144,7 +149,8 @@ export default function main_page() {
                                     <h3 className="text-xl md:text-2xl font-semibold text-white">Kochen</h3>
                                     <p className="text-base md:text-lg text-white/90 leading-relaxed">
                                         Ein Hobby dass ich noch nicht so lange mache, ist kochen. Am kochen fasziniert
-                                        mich vor allem wie unterschiedlich verschiedene Nationalitäten kochen, wobei ich italienisch am besten finde, und man diese
+                                        mich vor allem wie unterschiedlich verschiedene Nationalitäten kochen, wobei ich
+                                        italienisch am besten finde, und man diese
                                         zubereitet. Ich koche meistens italienisch oder asiatisch.
                                     </p>
                                 </div>
@@ -169,164 +175,181 @@ export default function main_page() {
                         </h2>
                         <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
                     </motion.div>
-                    <Swiper
-                        cssMode={true}
-                        navigation={true}
-                        pagination={true}
-                        mousewheel={true}
-                        keyboard={true}
-                        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                        className="mySwiper relative"
-                        breakpoints={{
-                            320: {
-                                slidesPerView: 1,
-                                spaceBetween: 20
-                            },
-                            768: {
-                                slidesPerView: 1,
-                                spaceBetween: 30
-                            }
-                        }}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
                     >
-                        <style jsx global>{`
-                            .swiper-button-next,
-                            .swiper-button-prev {
-                                color: #3b82f6 !important;
-                                background: rgba(255, 255, 255, 0.1);
-                                width: 40px !important;
-                                height: 40px !important;
-                                border-radius: 50%;
-                                backdrop-filter: blur(4px);
-                                z-index: 10;
-                            }
-                            .swiper-button-next:after,
-                            .swiper-button-prev:after {
-                                font-size: 20px !important;
-                            }
-                            .swiper-button-prev {
-                                left: 10px !important;
-                            }
-                            .swiper-button-next {
-                                right: 10px !important;
-                            }
-                            .swiper-pagination-bullet {
-                                background: #3b82f6 !important;
-                                opacity: 0.5;
-                            }
-                            .swiper-pagination-bullet-active {
-                                opacity: 1;
-                            }
-                        `}</style>
+                        <Swiper
+                            cssMode={true}
+                            navigation={true}
+                            pagination={true}
+                            mousewheel={true}
+                            keyboard={true}
+                            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                            className="mySwiper relative"
+                            onSwiper={(swiper) => (swiperRef.current = swiper)}
+                            breakpoints={{
+                                320: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 20
+                                },
+                                768: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 30
+                                }
+                            }}
+                        >
+                            <style jsx global>{`
+                                .swiper-button-next,
+                                .swiper-button-prev {
+                                    color: #3b82f6 !important;
+                                    background: rgba(255, 255, 255, 0.1);
+                                    width: 40px !important;
+                                    height: 40px !important;
+                                    border-radius: 50%;
+                                    backdrop-filter: blur(4px);
+                                    z-index: 10;
+                                }
 
-                        <SwiperSlide>
-                            <motion.div
-                                initial={{opacity: 0, y: 50}}
-                                whileInView={{opacity: 1, y: 0}}
-                                transition={{duration: 0.5}}
-                                viewport={{once: true}}
-                                className="bg-white/5 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 mx-auto"
-                            >
-                                <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                                    <div className="w-full md:w-1/2 relative aspect-[4/3]">
-                                        <Image
-                                            src={MemoNotesMockup}
-                                            alt="MemoNotes Mockup"
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, 50vw"
-                                            className="object-cover rounded-lg"
-                                        />
-                                    </div>
-                                    <div className="space-y-6 w-full md:w-1/2">
-                                        <h3 className="text-xl md:text-2xl font-semibold text-white">MemoNotes</h3>
-                                        <p className="text-base md:text-lg text-white/80">
-                                            Eine moderne Notizen-App mit Echtzeit-Synchronisation und Markdown-Unterstützung
-                                        </p>
-                                        <div className="space-y-4">
-                                            <div className="bg-white/10 p-4 rounded-lg">
-                                                <h4 className="text-sm font-medium text-white mb-2">Features</h4>
-                                                <ul className="text-white/80 space-y-1 text-sm">
-                                                    <li>• Echtzeit-Synchronisation</li>
-                                                    <li>• Markdown-Unterstützung</li>
-                                                    <li>• Cloud-Speicherung</li>
-                                                </ul>
-                                            </div>
-                                            <div className="bg-white/10 p-4 rounded-lg">
-                                                <h4 className="text-sm font-medium text-white mb-2">Verwendete Technologien</h4>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Firebase</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tailwind CSS</span>
+                                .swiper-button-next:after,
+                                .swiper-button-prev:after {
+                                    font-size: 20px !important;
+                                }
+
+                                .swiper-button-prev {
+                                    left: 10px !important;
+                                }
+
+                                .swiper-button-next {
+                                    right: 10px !important;
+                                }
+
+                                .swiper-pagination-bullet {
+                                    background: #3b82f6 !important;
+                                    opacity: 0.5;
+                                }
+
+                                .swiper-pagination-bullet-active {
+                                    opacity: 1;
+                                }
+                            `}</style>
+
+                            <SwiperSlide>
+                                <div
+                                    className="bg-white/5 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 mx-auto"
+                                >
+                                    <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                                        <div className="w-full md:w-1/2 relative aspect-[4/3]">
+                                            <Image
+                                                src={MemoNotesMockup}
+                                                alt="MemoNotes Mockup"
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 50vw"
+                                                className="object-cover rounded-lg"
+                                                onLoad={() => (swiperRef.current.update())}
+                                            />
+                                        </div>
+                                        <div className="space-y-6 w-full md:w-1/2">
+                                            <h3 className="text-xl md:text-2xl font-semibold text-white">MemoNotes</h3>
+                                            <p className="text-base md:text-lg text-white/80">
+                                                Eine moderne Notizen-App mit Echtzeit-Synchronisation und
+                                                Markdown-Unterstützung
+                                            </p>
+                                            <div className="space-y-4">
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Features</h4>
+                                                    <ul className="text-white/80 space-y-1 text-sm">
+                                                        <li>• Echtzeit-Synchronisation</li>
+                                                        <li>• Markdown-Unterstützung</li>
+                                                        <li>• Cloud-Speicherung</li>
+                                                    </ul>
                                                 </div>
-                                            </div>
-                                            <div className="bg-white/10 p-4 rounded-lg">
-                                                <h4 className="text-sm font-medium text-white mb-2">Status</h4>
-                                                <p className="text-white/80 text-sm">In Entwicklung</p>
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Verwendete
+                                                        Technologien</h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Firebase</span>
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tailwind CSS</span>
+                                                    </div>
+                                                </div>
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Status</h4>
+                                                    <p className="text-white/80 text-sm">In Entwicklung</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
-                        </SwiperSlide>
+                            </SwiperSlide>
 
-                        <SwiperSlide>
-                            <motion.div
-                                initial={{opacity: 0, y: 50}}
-                                whileInView={{opacity: 1, y: 0}}
-                                transition={{duration: 0.5, delay: 0.2}}
-                                viewport={{once: true}}
-                                className="bg-white/5 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 mx-auto"
-                            >
-                                <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                                    <div className="w-full md:w-1/2 relative aspect-[4/3]">
-                                        <Image
-                                            src={HousePricePredictorMockup}
-                                            alt="House Price Predictor Mockup"
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, 50vw"
-                                            className="object-cover rounded-lg"
-                                        />
-                                    </div>
-                                    <div className="space-y-6 w-full md:w-1/2">
-                                        <h3 className="text-xl md:text-2xl font-semibold text-white">House Price Predictor</h3>
-                                        <p className="text-base md:text-lg text-white/80">
-                                            Ein KI-gestütztes Tool zur Vorhersage von Immobilienpreisen
-                                        </p>
-                                        <div className="space-y-4">
-                                            <div className="bg-white/10 p-4 rounded-lg">
-                                                <h4 className="text-sm font-medium text-white mb-2">Features</h4>
-                                                <ul className="text-white/80 space-y-1 text-sm">
-                                                    <li>• KI-basierte Preisvorhersage</li>
-                                                    <li>• Detaillierte Immobilienanalyse</li>
-                                                    <li>• Benutzerfreundliche Oberfläche</li>
-                                                </ul>
-                                            </div>
-                                            <div className="bg-white/10 p-4 rounded-lg">
-                                                <h4 className="text-sm font-medium text-white mb-2">Verwendete Technologien</h4>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Python</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">TensorFlow</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Node.js</span>
+                            <SwiperSlide>
+                                <div
+                                    className="bg-white/5 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 mx-auto"
+                                >
+                                    <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                                        <div className="w-full md:w-1/2 relative aspect-[4/3]">
+                                            <Image
+                                                src={HousePricePredictorMockup}
+                                                alt="House Price Predictor Mockup"
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 50vw"
+                                                className="object-cover rounded-lg"
+                                            />
+                                        </div>
+                                        <div className="space-y-6 w-full md:w-1/2">
+                                            <h3 className="text-xl md:text-2xl font-semibold text-white">House Price
+                                                Predictor</h3>
+                                            <p className="text-base md:text-lg text-white/80">
+                                                Ein KI-gestütztes Tool zur Vorhersage von Immobilienpreisen
+                                            </p>
+                                            <div className="space-y-4">
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Features</h4>
+                                                    <ul className="text-white/80 space-y-1 text-sm">
+                                                        <li>• KI-basierte Preisvorhersage</li>
+                                                        <li>• Detaillierte Immobilienanalyse</li>
+                                                        <li>• Benutzerfreundliche Oberfläche</li>
+                                                    </ul>
                                                 </div>
-                                            </div>
-                                            <div className="bg-white/10 p-4 rounded-lg">
-                                                <h4 className="text-sm font-medium text-white mb-2">Status</h4>
-                                                <p className="text-white/80 text-sm">In Entwicklung</p>
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Verwendete
+                                                        Technologien</h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Python</span>
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">TensorFlow</span>
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Node.js</span>
+                                                    </div>
+                                                </div>
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Status</h4>
+                                                    <p className="text-white/80 text-sm">In Entwicklung</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
-                        </SwiperSlide>
-                    </Swiper>
+                            </SwiperSlide>
+                        </Swiper>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Skills Section */}
-            <SkillsSection />
+            <SkillsSection/>
 
             {/* Contact Section */}
-            <ContactSection />
+            <ContactSection/>
         </div>
     );
 }
