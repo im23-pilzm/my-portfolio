@@ -7,7 +7,7 @@ export default function Footer() {
                         <li>
                             <a 
                                 className="text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-md transition-all duration-300" 
-                                href="/impressum/page"
+                                href="/impressum"
                             >
                                 IMPRESSUM
                             </a>

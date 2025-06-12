@@ -1,6 +1,6 @@
 "use client"
 import {motion} from "framer-motion";
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import FadeDownVolleyball from "@/components/FadeDownVolleyball";
 import FadeDownCooking from "@/components/FadeDownCooking"
@@ -19,6 +19,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/keyboard';
 import 'swiper/css/mousewheel';
 import ContactSection from "@/components/ContactSection";
+import SkillsSection from "@/components/SkillsSection";
+
 
 export default function main_page() {
     return (
@@ -42,7 +44,6 @@ export default function main_page() {
                                 />
                             </div>
                             <div className="space-y-4">
-                                <h2 className="text-xl md:text-2xl font-semibold text-white">Über mich</h2>
                                 <p className="text-base md:text-lg text-white/90 leading-relaxed">
                                     Ich bin Maximilian Pilz, 17 Jahre alt, und besuche seit
                                     zwei Jahren die Informatikmittelschule (IMS). Programmieren fasziniert mich,
@@ -175,7 +176,7 @@ export default function main_page() {
                         mousewheel={true}
                         keyboard={true}
                         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                        className="mySwiper"
+                        className="mySwiper relative"
                         breakpoints={{
                             320: {
                                 slidesPerView: 1,
@@ -187,6 +188,36 @@ export default function main_page() {
                             }
                         }}
                     >
+                        <style jsx global>{`
+                            .swiper-button-next,
+                            .swiper-button-prev {
+                                color: #3b82f6 !important;
+                                background: rgba(255, 255, 255, 0.1);
+                                width: 40px !important;
+                                height: 40px !important;
+                                border-radius: 50%;
+                                backdrop-filter: blur(4px);
+                                z-index: 10;
+                            }
+                            .swiper-button-next:after,
+                            .swiper-button-prev:after {
+                                font-size: 20px !important;
+                            }
+                            .swiper-button-prev {
+                                left: 10px !important;
+                            }
+                            .swiper-button-next {
+                                right: 10px !important;
+                            }
+                            .swiper-pagination-bullet {
+                                background: #3b82f6 !important;
+                                opacity: 0.5;
+                            }
+                            .swiper-pagination-bullet-active {
+                                opacity: 1;
+                            }
+                        `}</style>
+
                         <SwiperSlide>
                             <motion.div
                                 initial={{opacity: 0, y: 50}}
@@ -222,23 +253,21 @@ export default function main_page() {
                                             <div className="bg-white/10 p-4 rounded-lg">
                                                 <h4 className="text-sm font-medium text-white mb-2">Verwendete Technologien</h4>
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">HTML</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">CSS</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">JavaScript</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Node.js</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Express.js</span>
-                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">PostgreSQL</span>
+                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
+                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Firebase</span>
+                                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tailwind CSS</span>
                                                 </div>
                                             </div>
                                             <div className="bg-white/10 p-4 rounded-lg">
                                                 <h4 className="text-sm font-medium text-white mb-2">Status</h4>
-                                                <p className="text-white/80 text-sm">Pausiert</p>
+                                                <p className="text-white/80 text-sm">In Entwicklung</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </motion.div>
                         </SwiperSlide>
+
                         <SwiperSlide>
                             <motion.div
                                 initial={{opacity: 0, y: 50}}
@@ -292,6 +321,9 @@ export default function main_page() {
                     </Swiper>
                 </div>
             </section>
+
+            {/* Skills Section */}
+            <SkillsSection />
 
             {/* Contact Section */}
             <ContactSection />
