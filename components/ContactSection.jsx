@@ -201,7 +201,7 @@ export default function ContactSection() {
                     >
                         <div className="flex justify-center space-x-6">
                             <a
-                                href="https://github.com"
+                                href="https://github.com/im23-pilzm"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-white/80 hover:text-white hover:bg-white/10 p-2 rounded-md transition-all duration-300 relative group"
