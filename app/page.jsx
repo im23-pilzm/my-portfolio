@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion";
-import React, { Suspense, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import FadeDownVolleyball from "@/components/FadeDownVolleyball";
 import FadeDownCooking from "@/components/FadeDownCooking"
@@ -9,7 +9,6 @@ import volleyballImage from "/public/Volleyball_Ball.png"
 import cookingImage from "/public/Header-Bewusst-Zeitsparend-Kochen-001.jpg"
 import HousePricePredictorMockup from "/public/HousePricePredictor_Mockup.png"
 import MemoNotesMockup from "/public/MemoNotes_Mockup.png"
-import MemoNotesImage from "/public/Screenshot 2025-04-10 143034.png"
 import { TypeAnimation } from "react-type-animation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
@@ -285,7 +284,7 @@ export default function main_page() {
                                                 </div>
                                                 <div className="bg-white/10 p-4 rounded-lg">
                                                     <h4 className="text-sm font-medium text-white mb-2">Status</h4>
-                                                    <p className="text-white/80 text-sm">In Entwicklung</p>
+                                                    <p className="text-white/80 text-sm">Abgebrochen</p>
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <a
@@ -360,7 +359,7 @@ export default function main_page() {
                                                 </div>
                                                 <div className="bg-white/10 p-4 rounded-lg">
                                                     <h4 className="text-sm font-medium text-white mb-2">Status</h4>
-                                                    <p className="text-white/80 text-sm">In Entwicklung</p>
+                                                    <p className="text-white/80 text-sm">Abgebrochen</p>
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <a
