@@ -8,9 +8,9 @@ import profilePic from "/public/IMG_0360.JPG"
 import volleyballImage from "/public/Volleyball_Ball.png"
 import cookingImage from "/public/Header-Bewusst-Zeitsparend-Kochen-001.jpg"
 import HousePricePredictorMockup from "/public/HousePricePredictor_Mockup.png"
-import OnlineShopMockup from "public/Online-Shop_Mockup.png"
+import OnlineShopMockup from "/public/Online-Shop_Mockup.png"
 import MemoNotesMockup from "/public/MemoNotes_Mockup.png"
-import OutfitTodayMockup from "public/OutfitToday_Mockup.png"
+import OutfitTodayMockup from "/public/OutfitToday_Mockup.png"
 import { TypeAnimation } from "react-type-animation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
