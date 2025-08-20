@@ -11,6 +11,7 @@ import HousePricePredictorMockup from "/public/HousePricePredictor_Mockup.png"
 import OnlineShopMockup from "/public/Online-Shop_Mockup.png"
 import MemoNotesMockup from "/public/MemoNotes_Mockup.png"
 import OutfitTodayMockup from "/public/OutfitToday_Mockup.png"
+import CyberattacksMockup from "/public/Cyberattacks_Mockip.png"
 import { TypeAnimation } from "react-type-animation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
@@ -450,6 +451,83 @@ export default function main_page() {
                                                 <div className="flex items-center gap-2">
                                                     <a
                                                         href="https://github.com/im23-pilzm/outfit-today"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        aria-label="GitHub Repository"
+                                                        className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white font-medium rounded-md hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#121429] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative group overflow-hidden flex items-center gap-2 justify-center"
+                                                    >
+                                                        <svg
+                                                            height="22"
+                                                            width="22"
+                                                            viewBox="0 0 24 24"
+                                                            fill="currentColor"
+                                                            aria-hidden="true"
+                                                            className="relative z-10"
+                                                            style={{display: 'inline', verticalAlign: 'middle'}}
+                                                        >
+                                                            <path
+                                                                d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387 0.6 0.113 0.82-0.258 0.82-0.577 0-0.285-0.011-1.04-0.017-2.04-3.338 0.726-4.042-1.61-4.042-1.61-0.546-1.387-1.333-1.756-1.333-1.756-1.089-0.745 0.083-0.729 0.083-0.729 1.205 0.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495 0.997 0.108-0.775 0.418-1.305 0.762-1.605-2.665-0.305-5.466-1.334-5.466-5.931 0-1.31 0.469-2.381 1.236-3.221-0.124-0.303-0.535-1.523 0.117-3.176 0 0 1.008-0.322 3.301 1.23 0.957-0.266 1.983-0.399 3.003-0.404 1.02 0.005 2.047 0.138 3.006 0.404 2.291-1.553 3.297-1.23 3.297-1.23 0.653 1.653 0.242 2.873 0.119 3.176 0.77 0.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921 0.43 0.372 0.823 1.102 0.823 2.222 0 1.606-0.014 2.898-0.014 3.293 0 0.322 0.216 0.694 0.825 0.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                                        </svg>
+                                                        <span className="relative z-10">GitHub Repository</span>
+                                                        <span
+                                                            className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div
+                                    className="bg-white/5 p-6 md:p-8 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 mx-auto"
+                                >
+                                    <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                                        <div className="w-full md:w-1/2 relative aspect-[4/3]">
+                                            <Image
+                                                src={CyberattacksMockup}
+                                                alt="Cyberattacks Mockup"
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 50vw"
+                                                className="object-cover rounded-lg"
+                                            />
+                                        </div>
+                                        <div className="space-y-6 w-full md:w-1/2">
+                                            <div className="flex items-center gap-2">
+                                                <h3 className="text-xl md:text-2xl font-semibold text-white">Cyberattacken Website</h3>
+                                            </div>
+                                            <p className="text-base md:text-lg text-white/80">
+                                                Eine Informative Webseite über Cyberattacken im Russland-Ukraine Konflikt mit eingebauter interaktiven Karte und einem Quiz um sein Wissen zu testen.
+                                            </p>
+                                            <div className="space-y-4">
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Features</h4>
+                                                    <ul className="text-white/80 space-y-1 text-sm">
+                                                        <li>• Informative Artikel</li>
+                                                        <li>• Interaktive Karte</li>
+                                                        <li>• Quiz</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Verwendete
+                                                        Technologien</h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">HTML</span>
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">CSS</span>
+                                                        <span
+                                                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">JavaScript</span>
+                                                    </div>
+                                                </div>
+                                                <div className="bg-white/10 p-4 rounded-lg">
+                                                    <h4 className="text-sm font-medium text-white mb-2">Status</h4>
+                                                    <p className="text-white/80 text-sm">Fertig</p>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <a
+                                                        href="https://github.com/im23-pilzm/projekt_cyberattacks"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         aria-label="GitHub Repository"
